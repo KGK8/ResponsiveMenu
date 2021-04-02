@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: hidden; */
     scroll-behavior: smooth;
 }
 body{
     height: 1500px;
-    background-color: #0e0e0f;    
+    background-color: #0e0e0f;  
     transition-delay: .5s;
     transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    user-select: none;
 }
 .preloader{
         min-height: 150px;
@@ -132,14 +134,29 @@ nav{
     background-color: #0e0e0f;
     position: relative;
     z-index: 0;
+    overflow: hidden;
+}
+.img-land{
+    position: absolute;
+    width: 300px;
+    border: none;
+    left: 10%;
+    top: 10%;
+    /* transform: ; */
+}
+.img-land-1{
+    position: absolute;
+    width: 300px;
+    top: 13%;
+    left: 10%;
 }
 .name{
     position: absolute;
     bottom: 60%;
-    left: 35%;
+    right: 15%;
     font-family: 'Aref Ruqaa', serif;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 3vw;
     color: #fff;
 }
 .name span{
@@ -183,7 +200,62 @@ nav{
         justify-content: space-around;
     }
 }
+/*Mobile*/
+@media screen and (max-width:834px){
+    .image-layer{
+        position: relative;
+        left: 20%;
+    }
+    .name{
+        font-size: 6vw!important;
+        top: 70%;
+        position: relative;
+        left: 14%;
+    }
+}
 
+@media screen and (max-width:748px){
+    body{
+        overflow-x: none!important;
+    }
+    .image-layer{
+        position: relative;
+        left: -1%;
+    }
+    .img-land-1{
+        position: absolute;
+        width: 300px;
+        left: 10%;
+    }
+    .nav-links{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+    }
+    .name{
+        font-size: 6vw!important;
+        top: 70%;
+        position: relative;
+        left: 12%;
+    }
+    .name::after { 
+        position: absolute;
+        content: attr(data-content);
+        content: '';
+        bottom: 0%;
+        left: 0%;
+        transition: width 1s ease;
+        width: 76%;
+        border-top: 3px solid black;
+        white-space: nowrap;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, #1dafc2, #e0dd00);
+      }
+}
+/* End Of Mobile */
 @media screen and (max-width:2000px){
     body{
         overflow-x: hidden;
@@ -202,6 +274,7 @@ nav{
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         z-index: 1;
+        display: none;
     }
     .nav-links li {
         opacity: 1;
@@ -213,12 +286,13 @@ nav{
         position: relative;
     }
     .name{
-        font-size: 2rem;
+        font-size: 3vw;
     }
 }
 /*End Of Responsive*/
 .nav-active {
     transform: translateX(0%);
+    display:flex;
 }
 
 @keyframes navLinkFade{

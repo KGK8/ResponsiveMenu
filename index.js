@@ -52,6 +52,25 @@ function menuClose() {
         document.querySelector('.preloader').style.display = 'none';
         document.getElementsByClassName('cont')[0].classList.remove('load');
     }
+
+    document.addEventListener('mousemove', parallax);
+    function parallax(e) {
+           const speed = this.querySelectorAll('.img-land')[0].getAttribute('data-speed')
+           const speed1 = this.querySelectorAll('.img-land-1')[0].getAttribute('data-speed')
+
+           const x = (window.innerWidth - e.pageX*speed)/500
+           const y = (window.innerHeight - e.pageY*speed)/500
+
+           const x1 = (window.innerWidth - e.pageX*speed1)/500
+           const y1 = (window.innerHeight - e.pageY*speed1)/500
+        console.log(x);
+
+        // document.getElementsByClassName('img-land')[0].style.transform = `skewX(${x}deg) skewY(${y}deg)`
+        // document.getElementsByClassName('img-land-1')[0].style.transform = `skewX(${x1}deg) skewY(${y1}deg)`
+        document.getElementsByClassName('img-land')[0].style.transform = `translate3d(${x}px , 10px ,${y}px) skewX(${x/10}deg) skewY(${y/4}deg)`
+        document.getElementsByClassName('img-land-1')[0].style.transform = `translate3d(${x1}% , 10px ,${y1}px)`
+    }
+
 } 
 
 
