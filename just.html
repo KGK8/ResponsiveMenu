@@ -22,8 +22,9 @@ gyroscope.addEventListener('reading', e => {
   document.getElementsByClassName('txt')[0].innerText="Angular velocity along the X-axis " + gyroscope.x;
   document.getElementsByClassName('txt1')[0].innerText="Angular velocity along the Y-axis " + gyroscope.y;
   document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.z;
-
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${gyroscope.x}% , 10px ,${gyroscope.y}px)`
+    const x = gyroscope.x *5;
+    const y = gyroscope.y *5;
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}%)`
 
 
 });
