@@ -16,9 +16,10 @@ gyroscope.addEventListener('reading', e => {
   console.log("Angular velocity along the X-axis " + gyroscope.x);
   console.log("Angular velocity along the Y-axis " + gyroscope.y);
   console.log("Angular velocity along the Z-axis " + gyroscope.z);
+  document.getElementsByClassName('txt')[0].append("Angular velocity along the X-axis " + gyroscope.x);
+
 });
 
-document.getElementsByClassName('txt')[0].append("Angular velocity along the X-axis " + gyroscope.x);
 
 gyroscope.start();
 </script>
