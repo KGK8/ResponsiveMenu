@@ -8,6 +8,8 @@
 </head>
 <body>
     <span class="txt"></span>
+    <span class="txt1"></span>
+    <span class="txt2"></span>
 </body>
 <script>
 let gyroscope = new Gyroscope({frequency: 60});
@@ -17,6 +19,8 @@ gyroscope.addEventListener('reading', e => {
   console.log("Angular velocity along the Y-axis " + gyroscope.y);
   console.log("Angular velocity along the Z-axis " + gyroscope.z);
   document.getElementsByClassName('txt')[0].innerText="Angular velocity along the X-axis " + gyroscope.x;
+  document.getElementsByClassName('txt1')[0].innerText="Angular velocity along the Y-axis " + gyroscope.Y;
+  document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.Z;
 });
 
 
