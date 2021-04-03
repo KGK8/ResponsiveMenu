@@ -1,6 +1,7 @@
 <p>This Example just print's the raw accelerometer and gyro data.<br>Will return null if no device information is found.</p>
 	<p>gyro.getFeatures: <span id="features"></span></p>
 	<span id="example"></span>
+	<img src="2.png" style="width: 300px;" class="img">
 
 
 	<script>
@@ -17,5 +18,10 @@ gyro.startTracking(function(o) {
 										  "<p> alpha = " + o.alpha + "</p>" +
 										  "<p> beta = " + o.beta + "</p>" +
 										  "<p> gamma = " + o.gamma + "</p>";
+
+    document.getElementsByClassName('img')[0].style.transform = `translate3d(${o.alpha}% , 10px ,${o.beta}px) skewX(${o.gamma/10}deg) skewY(${o.alpha/4}deg)`
+
+
+
 		});
 	</script>
