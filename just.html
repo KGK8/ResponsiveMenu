@@ -25,7 +25,7 @@ gyroscope.addEventListener('reading', e => {
 //   document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.z;
     const x = gyroscope.x *5;
     const y = gyroscope.y *5;
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}%)`
+//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}%)`
 
 
 });
@@ -37,6 +37,7 @@ gyroscope.start();
 window.addEventListener('deviceorientation', function(ev){
     console.info(ev.alpha,ev.beta,ev.gamma);
   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma;
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${ev.alpha}% , ${ev.beta}px ,${ev.gamma}%)`
 
 });
 
