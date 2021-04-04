@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .img{
+            transition: 0.5s linear;
+        }
+    </style>
 </head>
 <body>
     <span class="txt"></span>
@@ -37,7 +42,7 @@ gyroscope.start();
 window.addEventListener('deviceorientation', function(ev){
     console.info(ev.alpha,ev.beta,ev.gamma);
   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma;
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${ev.alpha}% , ${ev.beta}px ,${ev.gamma}%)`
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${ev.alpha/10}% , ${ev.beta/10}px ,${ev.gamma/10}%)`
 
 });
 
