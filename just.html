@@ -27,10 +27,10 @@ gyroscope.addEventListener('reading', e => {
 //   console.log("Angular velocity along the Z-axis " + gyroscope.z);
 //   document.getElementsByClassName('txt')[0].innerText="Angular velocity along the X-axis " + gyroscope.x;
 //   document.getElementsByClassName('txt1')[0].innerText="Angular velocity along the Y-axis " + gyroscope.y;
-//   document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.z;
-    const x = gyroscope.x *5;
-    const y = gyroscope.y *5;
-//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}%)`
+// //   document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.z;
+//     const x = gyroscope.x *5;
+//     const y = gyroscope.y *5;
+//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${x/10}% , 10px ,${y}px)`
 
 
 });
@@ -48,9 +48,9 @@ window.addEventListener('deviceorientation', function(ev){
     const k = ev.alpha
     const kg = ev.beta
     const kgk = ev.gamma
-  document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
+//   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma + "K" + k;
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k*10}% , ${kg*10}px ,${kgk*10}%)`
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k/10}% , ${kg}px ,${kgk}px)`
 
 });
 
