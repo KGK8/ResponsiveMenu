@@ -42,11 +42,11 @@ gyroscope.start();
 window.addEventListener('deviceorientation', function(ev){
     console.info(ev.alpha,ev.beta,ev.gamma);
 
-    // const k = Math.atan(ev.alpha)
-    // const kg = Math.atan(ev.beta)
-    // const kgk = Math.atan(ev.gamma)
+    const k = Math.atan(ev.alpha)
+    const kg = Math.atan(ev.beta)
+    const kgk = Math.atan(ev.gamma)
   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma;
-//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${k}% , ${kg}px ,${kgk}%)`
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k}% , ${kg}px ,${kgk}%)`
 
 });
 
