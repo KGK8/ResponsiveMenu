@@ -53,7 +53,8 @@ window.addEventListener('deviceorientation', function(ev){
     const kgk = ev.gamma
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma + "K" + k;
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k/10}% , ${kg}px ,${kgk}px)`
+  //document.getElementsByClassName('img')[0].style.transform = `translate3d(${k/10}% , ${kg}px ,${kgk}px)`
+  document.getElementsByClassName('img')[0].style.transform = `translateY(${k/10}%)`
 
 });
 
