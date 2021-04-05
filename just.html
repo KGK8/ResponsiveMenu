@@ -16,7 +16,7 @@
     <span class="txt1"></span>
     <span class="txt2"></span>
     <span class="txt3"></span>
-	<img src="2.png" style="width: 300px;" class="img">
+	<img src="3.png" style="width: 300px;" class="img">
 </body>
 <script>
 let gyroscope = new Gyroscope({frequency: 60});
@@ -30,7 +30,7 @@ gyroscope.addEventListener('reading', e => {
 //   document.getElementsByClassName('txt2')[0].innerText="Angular velocity along the Z-axis " + gyroscope.z;
     const x = gyroscope.x *5;
     const y = gyroscope.y *5;
-//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}px)`
+//   document.getElementsByClassName('img')[0].style.transform = `translate3d(${x}% , 10px ,${y}%)`
 
 
 });
@@ -48,9 +48,9 @@ window.addEventListener('deviceorientation', function(ev){
     const k = ev.alpha
     const kg = ev.beta
     const kgk = ev.gamma
- // document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
+  document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma + "K" + k;
-  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k/10}% , ${kg}px ,${kgk}px)`
+  document.getElementsByClassName('img')[0].style.transform = `translate3d(${k*10}% , ${kg*10}px ,${kgk*10}%)`
 
 });
 
