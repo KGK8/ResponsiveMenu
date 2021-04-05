@@ -45,7 +45,7 @@ window.addEventListener('deviceorientation', function(ev){
     const k = Math.atan(ev.alpha)
     const kg = Math.atan(ev.beta)
     const kgk = Math.atan(ev.gamma)
-  document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma;
+  document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma + "K" + k;
   document.getElementsByClassName('img')[0].style.transform = `translate3d(${k}% , ${kg}px ,${kgk}%)`
 
 });
