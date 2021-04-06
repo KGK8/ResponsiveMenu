@@ -57,6 +57,11 @@ window.addEventListener('deviceorientation', function(ev){
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + k + ";Beta =" + kg + ";Gamma=" + kgk;
 //   document.getElementsByClassName('txt3')[0].innerText="Alpha=" + ev.alpha + ";Beta =" + ev.beta + ";Gamma=" + ev.gamma + "K" + k;
   //document.getElementsByClassName('img')[0].style.transform = `translate3d(${k/10}% , ${kg}px ,${kgk}px)`
+    
+    document.getElementsByClassName('txt1')[0].innerText = "Z-Axis"+Math.round(k);
+	document.getElementsByClassName('txt2')[0].innerText = "X-Axis"+Math.round(kg);
+	document.getElementsByClassName('txt3')[0].innerText = "Y-Axis"+Math.round(kgk);
+    
   document.getElementsByClassName('img')[0].style.transform = `translateY(-${kg}%)`
 
 });
