@@ -6,7 +6,7 @@ const navSlide = () =>{
     var navfix = document.getElementsByTagName("nav");
     console.log(navfix);
     console.log(nava);
-
+    console.log(navLinks);
     burger.addEventListener('click',() =>{
         nav.classList.toggle('nav-active');
         navLinks.forEach((link,index) =>{
@@ -57,22 +57,33 @@ function menuClose() {
     function parallax(e) {
            const speed = this.querySelectorAll('.img-land')[0].getAttribute('data-speed')
            const speed1 = this.querySelectorAll('.img-land-1')[0].getAttribute('data-speed')
-
+           const texttrans = this.querySelectorAll('.name')[0].getAttribute('data-speed')
+            // const m = e.pageX;
+            // console.log(m);
            const x = (window.innerWidth - e.pageX*speed)/500
            const y = (window.innerHeight - e.pageY*speed)/500
 
            const x1 = (window.innerWidth - e.pageX*speed1)/500
            const y1 = (window.innerHeight - e.pageY*speed1)/500
-        console.log(x);
+
+           const x2 = (window.innerWidth - e.pageX*texttrans)/800
+           const y2 = (window.innerHeight - e.pageY*texttrans)/800
 
         // document.getElementsByClassName('img-land')[0].style.transform = `skewX(${x}deg) skewY(${y}deg)`
         // document.getElementsByClassName('img-land-1')[0].style.transform = `skewX(${x1}deg) skewY(${y1}deg)`
         document.getElementsByClassName('img-land')[0].style.transform = `translate3d(${x}px , 10px ,${y}px) skewX(${x/10}deg) skewY(${y/4}deg)`
         document.getElementsByClassName('img-land-1')[0].style.transform = `translate3d(${x1}% , 10px ,${y1}px)`
+        document.getElementsByClassName('name')[0].style.transform = `translate3d(${x2}% , 10px ,${y2}px) skewX(${x2/10}deg) skewY(${y2/4}deg)`
     }
 
 } 
 
-
+document.getElementById("name").addEventListener('mousemove',(ex) =>{
+    if(!onmousemove){ 
+            const x = ex.offsetX;
+            console.log(x);
+            document.getElementById('num').innerText = x;
+     }
+  },false);
 navSlide();
 menuClose();
